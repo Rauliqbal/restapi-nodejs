@@ -17,7 +17,7 @@ mongoose
    .then(console.log("Connected to MongoDB!"))
    .catch((err) => console.log(err));
 
-const storage = multer.diskStorage({
+const fileStorage = multer.diskStorage({
    destination: (req, file, cb) => {
       cb(null, "images");
    },
@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
    },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: fileStorage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
    res.status(200).json("File has been uploaded");
 });
