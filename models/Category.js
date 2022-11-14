@@ -6,9 +6,13 @@ const CategorySchema = new mongoose.Schema(
          type: String,
          required: true,
       },
-      productCount: {
+      products_count: {
          type: Number,
          required: true,
+      },
+      photo: {
+         type: String,
+         reuired: true,
       },
    },
    { timestamps: true }
