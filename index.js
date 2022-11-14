@@ -7,10 +7,12 @@ const userRoute = require("./routes/users");
 const productRoute = require("./routes/product");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
+const cors = require("cors");
 const port = process.env.PORT;
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 // Connect to Mongo DB
 mongoose
