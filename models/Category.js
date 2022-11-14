@@ -6,6 +6,10 @@ const CategorySchema = new mongoose.Schema(
          type: String,
          required: true,
       },
+      productCount: {
+         type: Number,
+         required: true,
+      },
    },
    { timestamps: true }
 );

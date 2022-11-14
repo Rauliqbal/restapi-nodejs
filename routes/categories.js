@@ -21,4 +21,14 @@ router.get("/", async (req, res) => {
    }
 });
 
+router.delete("/:id", async (req, res) => {
+   const category = await Category.findById(req.params.id);
+   try {
+      await category.delete();
+      res.status(200).json("Product has been deleted!");
+   } catch (err) {
+      res.status(500).json(err);
+   }
+});
+
 module.exports = router;
