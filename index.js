@@ -8,7 +8,7 @@ const productRoute = require("./routes/product");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const cors = require("cors");
-const port = 5000;
+const port = process.env.PORT;
 
 dotenv.config();
 app.use(express.json());
